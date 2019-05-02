@@ -1,0 +1,30 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Nodemon",
+			"runtimeExecutable": "node_modules/nodemon/bin/nodemon.js",
+			"args": ["${workspaceRoot}/src/index.js"],
+			"restart": true,
+			"protocol": "inspector",
+			"stopOnEntry": false,
+			"runtimeArgs": ["--nolazy", "--exec", "babel-node", "src/index.js"],
+			"sourceMaps": true
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Attach Nodemon",
+			"restart": true,
+			"protocol": "inspector",
+			"stopOnEntry": false,
+			"sourceMaps": true,
+			"processId": "${command:PickProcess}"
+		}
+	]
+}

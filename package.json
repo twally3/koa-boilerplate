@@ -1,0 +1,43 @@
+{
+	"name": "koa-boilerplate",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "npm run build && cross-env NODE_ENV=production node dist/index.js",
+		"clean": "rm -rf dist",
+		"test": "npm run lint && npm run prettier && npm run jest",
+		"dev": "nodemon --inspect --exec babel-node src/index.js",
+		"lint": "eslint **/*.js",
+		"prettier": "prettier --check **/*.js",
+		"jest": "jest --env=node",
+		"build": "npm run clean && babel src --out-dir dist"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.4",
+		"@babel/node": "^7.2.2",
+		"@babel/preset-env": "^7.4.4",
+		"eslint": "^5.16.0",
+		"eslint-plugin-prettier": "^3.0.1",
+		"jest": "^24.7.1",
+		"nodemon": "^1.19.0",
+		"prettier": "^1.17.0"
+	},
+	"dependencies": {
+		"@koa/cors": "^3.0.0",
+		"bristol": "^0.4.0",
+		"cross-env": "^5.2.0",
+		"dotenv": "^7.0.0",
+		"koa": "^2.7.0",
+		"koa-bodyparser": "^4.2.1",
+		"koa-helmet": "^4.1.0",
+		"koa-logger": "^3.2.0",
+		"koa-respond": "^2.1.0",
+		"koa-router": "^7.4.0",
+		"palin": "^2.2.0"
+	}
+}
